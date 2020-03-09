@@ -34,15 +34,18 @@ public class InterceptorChain {
   public Object pluginAll(Object target) {
     //循环调用每个Interceptor.plugin方法
     for (Interceptor interceptor : interceptors) {
+      //对executor进行的插件处理，简单理解为进行了包装
       target = interceptor.plugin(target);
     }
     return target;
   }
 
   public void addInterceptor(Interceptor interceptor) {
+    //放到了容器里面
+    //也就是解析所有的插件的时候，会放到容器中interceptors，一个list
     interceptors.add(interceptor);
   }
-  
+
   public List<Interceptor> getInterceptors() {
     return Collections.unmodifiableList(interceptors);
   }

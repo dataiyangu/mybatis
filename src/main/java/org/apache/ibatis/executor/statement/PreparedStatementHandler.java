@@ -35,7 +35,7 @@ import org.apache.ibatis.session.RowBounds;
  */
 /**
  * 预处理语句处理器(PREPARED)
- * 
+ *
  */
 public class PreparedStatementHandler extends BaseStatementHandler {
 
@@ -65,6 +65,7 @@ public class PreparedStatementHandler extends BaseStatementHandler {
   public <E> List<E> query(Statement statement, ResultHandler resultHandler) throws SQLException {
     PreparedStatement ps = (PreparedStatement) statement;
     ps.execute();
+    //对结果集进行处理
     return resultSetHandler.<E> handleResultSets(ps);
   }
 

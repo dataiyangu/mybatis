@@ -47,7 +47,7 @@ import org.apache.ibatis.type.TypeHandlerRegistry;
  */
 /**
  * 执行器基类
- * 
+ *
  */
 public abstract class BaseExecutor implements Executor {
 
@@ -158,6 +158,9 @@ public abstract class BaseExecutor implements Executor {
     if (closed) {
       throw new ExecutorException("Executor was closed.");
     }
+    //防止查询语句递归调用,重复的处理缓存,所以引入了queryStack
+    //isFlushCacheRequired是在 select标签等中定义的,如果在查询的标签中定义了它,会把缓存清空掉
+    //一般查询上默认值是false,增删改上面的默认值是true
     //先清局部缓存，再查询.但仅查询堆栈为0，才清。为了处理递归调用
     if (queryStack == 0 && ms.isFlushCacheRequired()) {
       clearLocalCache();
@@ -166,7 +169,7 @@ public abstract class BaseExecutor implements Executor {
     try {
       //加一,这样递归调用到上面的时候就不会再清局部缓存了
       queryStack++;
-      //先根据cachekey从localCache去查
+      //先根据cachekey从localCache去查  PerpetualCache本地缓存
       list = resultHandler == null ? (List<E>) localCache.getObject(key) : null;
       if (list != null) {
         //若查到localCache缓存，处理localOutputParameterCache
@@ -218,11 +221,15 @@ public abstract class BaseExecutor implements Executor {
     if (closed) {
       throw new ExecutorException("Executor was closed.");
     }
+    //无论一级缓存二级缓存cacheKey都是一样的
     CacheKey cacheKey = new CacheKey();
     //MyBatis 对于其 Key 的生成采取规则为：[mappedStementId + offset + limit + SQL + queryParams + environment]生成一个哈希码
+    //ms.getId()就是类名加上statement id
     cacheKey.update(ms.getId());
+    //翻页的信息
     cacheKey.update(Integer.valueOf(rowBounds.getOffset()));
     cacheKey.update(Integer.valueOf(rowBounds.getLimit()));
+    //sql语句
     cacheKey.update(boundSql.getSql());
     List<ParameterMapping> parameterMappings = boundSql.getParameterMappings();
     TypeHandlerRegistry typeHandlerRegistry = ms.getConfiguration().getTypeHandlerRegistry();
@@ -243,6 +250,7 @@ public abstract class BaseExecutor implements Executor {
           MetaObject metaObject = configuration.newMetaObject(parameterObject);
           value = metaObject.getValue(propertyName);
         }
+        //参数的信息
         cacheKey.update(value);
       }
     }
@@ -251,7 +259,7 @@ public abstract class BaseExecutor implements Executor {
       cacheKey.update(configuration.getEnvironment().getId());
     }
     return cacheKey;
-  }    
+  }
 
   @Override
   public boolean isCached(MappedStatement ms, CacheKey key) {
@@ -332,10 +340,12 @@ public abstract class BaseExecutor implements Executor {
 
   //从数据库查
   private <E> List<E> queryFromDatabase(MappedStatement ms, Object parameter, RowBounds rowBounds, ResultHandler resultHandler, CacheKey key, BoundSql boundSql) throws SQLException {
+    //既然要到数据库去查询，查询完了之后一定会保存起来到list中
     List<E> list;
-    //先向缓存中放入占位符？？？
+    //先向缓存中放入占位符？？？EXECUTION_PLACEHOLDER
     localCache.putObject(key, EXECUTION_PLACEHOLDER);
     try {
+      //查询（没有缓存）
       list = doQuery(ms, parameter, rowBounds, resultHandler, boundSql);
     } finally {
       //最后删除占位符
@@ -364,7 +374,7 @@ public abstract class BaseExecutor implements Executor {
   public void setExecutorWrapper(Executor wrapper) {
     this.wrapper = wrapper;
   }
-  
+
   //延迟加载
   private static class DeferredLoad {
 

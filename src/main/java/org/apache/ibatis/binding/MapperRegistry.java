@@ -48,6 +48,8 @@ public class MapperRegistry {
   @SuppressWarnings("unchecked")
   //返回代理类
   public <T> T getMapper(Class<T> type, SqlSession sqlSession) {
+    //拿到了接口对应的工厂类
+    //这就是为什么之前的mapperRegistry存储的是<接口，MapperProxyFactory>
     final MapperProxyFactory<T> mapperProxyFactory = (MapperProxyFactory<T>) knownMappers.get(type);
     if (mapperProxyFactory == null) {
       throw new BindingException("Type " + type + " is not known to the MapperRegistry.");
@@ -58,7 +60,7 @@ public class MapperRegistry {
       throw new BindingException("Error getting mapper instance. Cause: " + e, e);
     }
   }
-  
+
   public <T> boolean hasMapper(Class<T> type) {
     return knownMappers.containsKey(type);
   }
@@ -73,6 +75,8 @@ public class MapperRegistry {
       }
       boolean loadCompleted = false;
       try {
+        //key是接口类型，value是工厂类
+        //具体怎么映射起来的先留这
         knownMappers.put(type, new MapperProxyFactory<T>(type));
         // It's important that the type is added before the parser is run
         // otherwise the binding may automatically be attempted by the
@@ -116,5 +120,5 @@ public class MapperRegistry {
   public void addMappers(String packageName) {
     addMappers(packageName, Object.class);
   }
-  
+
 }

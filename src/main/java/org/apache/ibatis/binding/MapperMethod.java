@@ -39,8 +39,9 @@ import java.util.*;
  *
  */
 public class MapperMethod {
-
+  //包含了增删改查的类型和sql相关的信息，
   private final SqlCommand command;
+  //方法签名
   private final MethodSignature method;
 
   public MapperMethod(Class<?> mapperInterface, Method method, Configuration config) {
@@ -53,6 +54,8 @@ public class MapperMethod {
     Object result;
     //可以看到执行时就是4种情况，insert|update|delete|select，分别调用SqlSession的4大类方法
     if (SqlCommandType.INSERT == command.getType()) {
+      //无论哪个方法都有一个convertArgsToSqlCommandParam方法
+      //把方法的参数转化成sql语句里面可以识别的参数，比如where id = ？
       Object param = method.convertArgsToSqlCommandParam(args);
       result = rowCountResult(sqlSession.insert(command.getName(), param));
     } else if (SqlCommandType.UPDATE == command.getType()) {
@@ -75,13 +78,14 @@ public class MapperMethod {
       } else {
         //否则就是一条记录
         Object param = method.convertArgsToSqlCommandParam(args);
+        // 还是最终调用的了sqlSession的selectOne方法
         result = sqlSession.selectOne(command.getName(), param);
       }
     } else {
       throw new BindingException("Unknown execution method for: " + command.getName());
     }
     if (result == null && method.getReturnType().isPrimitive() && !method.returnsVoid()) {
-      throw new BindingException("Mapper method '" + command.getName() 
+      throw new BindingException("Mapper method '" + command.getName()
           + " attempted to return null from a method with a primitive return type (" + method.getReturnType() + ").");
     }
     return result;
@@ -111,8 +115,8 @@ public class MapperMethod {
   private void executeWithResultHandler(SqlSession sqlSession, Object[] args) {
     MappedStatement ms = sqlSession.getConfiguration().getMappedStatement(command.getName());
     if (void.class.equals(ms.getResultMaps().get(0).getType())) {
-      throw new BindingException("method " + command.getName() 
-          + " needs either a @ResultMap annotation, a @ResultType annotation," 
+      throw new BindingException("method " + command.getName()
+          + " needs either a @ResultMap annotation, a @ResultType annotation,"
           + " or a resultType attribute in XML so a ResultHandler can be used as a parameter.");
     }
     Object param = method.convertArgsToSqlCommandParam(args);
@@ -271,9 +275,9 @@ public class MapperMethod {
           final String genericParamName = "param" + String.valueOf(i + 1);
           if (!param.containsKey(genericParamName)) {
             //2.再加一个#{param1},#{param2}...参数
-            //你可以传递多个参数给一个映射器方法。如果你这样做了, 
+            //你可以传递多个参数给一个映射器方法。如果你这样做了,
             //默认情况下它们将会以它们在参数列表中的位置来命名,比如:#{param1},#{param2}等。
-            //如果你想改变参数的名称(只在多参数情况下) ,那么你可以在参数上使用@Param(“paramName”)注解。 
+            //如果你想改变参数的名称(只在多参数情况下) ,那么你可以在参数上使用@Param(“paramName”)注解。
             param.put(genericParamName, args[entry.getKey()]);
           }
           i++;

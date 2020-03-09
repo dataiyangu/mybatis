@@ -38,7 +38,7 @@ import org.apache.ibatis.type.TypeHandlerRegistry;
  */
 /**
  * 语句处理器的基类
- * 
+ *
  */
 public abstract class BaseStatementHandler implements StatementHandler {
 
@@ -71,8 +71,12 @@ public abstract class BaseStatementHandler implements StatementHandler {
     this.boundSql = boundSql;
 
     //生成parameterHandler
+    //方法的参数转化成jdbc的参数
+    //在执行sql的时候通过插件进行包装
     this.parameterHandler = configuration.newParameterHandler(mappedStatement, parameterObject, boundSql);
     //生成resultSetHandler
+    //结果集转化成对象的参数
+    //在执行sql的时候通过插件进行包装
     this.resultSetHandler = configuration.newResultSetHandler(executor, mappedStatement, rowBounds, parameterHandler, resultHandler, boundSql);
   }
 

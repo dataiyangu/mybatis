@@ -1,0 +1,772 @@
+<project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/src/test/java/com/leesin/MybatisTest.java" description="************************************************解析配置文件build()************************************************" line="42" />
+    <bookmark url="file://$PROJECT_DIR$/src/test/java/com/leesin/MybatisTest.java" description="从这里进去 build方法" line="43" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/session/SqlSessionFactoryBuilder.java" description="进入" line="76" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/session/SqlSessionFactoryBuilder.java" description="到了这里" line="88" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/session/SqlSessionFactoryBuilder.java" description="看一下他的构造函数" line="93" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/builder/xml/XMLConfigBuilder.java" description="到这里" line="83" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/builder/xml/XMLConfigBuilder.java" description="new Configuration" line="89" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/session/SqlSessionFactoryBuilder.java" description="进入parse()" line="95" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/builder/xml/XMLConfigBuilder.java" description="到这里" line="100" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/builder/xml/XMLConfigBuilder.java" description="解析configuration这个节点" line="127" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/builder/xml/XMLConfigBuilder.java" description="看一下是如何解析properties的" line="137" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/builder/xml/XMLConfigBuilder.java" description="看一下set方法" line="293" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/session/Configuration.java" description="这个variable是Configuration这个类中Properties的一个属性，后面所有的解析都是这样的" line="125" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/builder/xml/XMLConfigBuilder.java" description="看一下settings" line="147" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/builder/xml/XMLConfigBuilder.java" description="看一下Aliases" line="139" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/builder/xml/XMLConfigBuilder.java" description="放到了TypeAliasRegistry中" line="207" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/builder/xml/XMLConfigBuilder.java" description="看一下插件" line="141" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/builder/xml/XMLConfigBuilder.java" description="跟进去" line="232" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/session/Configuration.java" description="跟进去" line="683" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/plugin/InterceptorChain.java" description="放到了list中" line="45" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/builder/xml/XMLConfigBuilder.java" description="创建对象的和之前的类似" line="143" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/builder/xml/XMLConfigBuilder.java" description="这里同理，略过了" line="145" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/builder/xml/XMLConfigBuilder.java" description="回来接着看settings是如何处理的" line="148" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/builder/xml/XMLConfigBuilder.java" description="这里定义了一堆的默认值，把值都赋值到Configuration中" line="314" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/builder/xml/XMLConfigBuilder.java" description="解析environments标签" line="159" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/builder/xml/XMLConfigBuilder.java" description="产生了事务工厂和数据源的工厂。  最后构建environments对象，还是放入了Configuration中" line="399" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/builder/xml/XMLConfigBuilder.java" description="这里跳过了" line="162" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/builder/xml/XMLConfigBuilder.java" description="简单了解" line="165" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/builder/xml/XMLConfigBuilder.java" description="关键的Mapper映射器的解析" line="167" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/builder/xml/XMLConfigBuilder.java" description="进来" line="544" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/builder/xml/XMLConfigBuilder.java" description="看一下parse方法" line="563" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/builder/xml/XMLMapperBuilder.java" description="进来" line="96" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/builder/xml/XMLMapperBuilder.java" description="进入configurationElement方法" line="100" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/builder/xml/XMLMapperBuilder.java" description="进入buildStatementFromContext" line="145" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/builder/xml/XMLMapperBuilder.java" description="进入" line="157" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/builder/xml/XMLMapperBuilder.java" description="进入解析增删改查的标签" line="170" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/builder/xml/XMLStatementBuilder.java" description="进入addMappedStatement" line="148" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/builder/MapperBuilderAssistant.java" description="到这里" line="266" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/builder/xml/XMLMapperBuilder.java" description="进入bindMaapperFornamespace" line="105" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/builder/xml/XMLMapperBuilder.java" description="接口的类型" line="502" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/builder/xml/XMLMapperBuilder.java" description="addMapper" line="513" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/session/Configuration.java" description="再次进入" line="696" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/binding/MapperRegistry.java" description="关键点！！！" line="68" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/session/SqlSessionFactoryBuilder.java" description="现在再进入build方法查看" line="94" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/session/SqlSessionFactoryBuilder.java" description="到这里" line="109" />
+    <bookmark url="file://$PROJECT_DIR$/src/test/java/com/leesin/MybatisTest.java" description="************************************************创建会话openSession()************************************************" line="44" />
+    <bookmark url="file://$PROJECT_DIR$/src/test/java/com/leesin/MybatisTest.java" description="进入openSession" line="45" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/session/defaults/DefaultSqlSessionFactory.java" description="进入" line="52" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/session/defaults/DefaultSqlSessionFactory.java" description="进入NewExecutor" line="104" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/session/Configuration.java" description="这里是settings标签中的二级缓存的配置cacheEnabled" line="527" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/session/Configuration.java" description="就会通过装饰器模式，对这三个executor进行装饰" line="529" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/session/Configuration.java" description="进入pluginAll方法" line="533" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/plugin/InterceptorChain.java" description="对executor进行的插件处理，简单理解为进行了包装" line="37" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/session/defaults/DefaultSqlSessionFactory.java" description="到这里产生了一个最终的sqlSession" line="106" />
+    <bookmark url="file://$PROJECT_DIR$/src/test/java/com/leesin/MybatisTest.java" description="************************************************获取Mapper对象getMapper()************************************************" line="47" />
+    <bookmark url="file://$PROJECT_DIR$/src/test/java/com/leesin/MybatisTest.java" description="进入getMapper" line="49" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/session/defaults/DefaultSqlSession.java" description="进入MapperRegistry.getMapper" line="295" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/session/Configuration.java" description="进入" line="700" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/binding/MapperRegistry.java" description="拿到了接口对应的工厂类" line="52" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/binding/MapperRegistry.java" description="进入newInstance方法" line="57" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/binding/MapperProxyFactory.java" description="通过new的方式new出MapperProxy" line="57" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/binding/MapperProxyFactory.java" description="进入newInstance方法" line="58" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/binding/MapperProxy.java" description="确实实现了InvocationHandler接口" line="34" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/binding/MapperProxyFactory.java" description="为什么是一个代理对象？" line="52" />
+    <bookmark url="file://$PROJECT_DIR$/src/test/java/com/leesin/MybatisTest.java" description="************************************************sql执行selectById()************************************************" line="50" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/binding/MapperProxy.java" description="那么直接看MapperProxy的invoke方法" line="48" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/binding/MapperProxy.java" description="进入MapperMethod" line="60" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/binding/MapperProxy.java" description="进入cachedMapperMethod方法" line="59" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/binding/MapperProxy.java" description="进入execute方法" line="62" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/binding/MapperMethod.java" description="找到select这里" line="66" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/binding/MapperMethod.java" description="调用的sqlSession的selectOne方法" line="81" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/session/defaults/DefaultSqlSession.java" description="到了这里" line="74" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/session/defaults/DefaultSqlSession.java" description="进入selectList" line="84" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/session/defaults/DefaultSqlSession.java" description="再次进入" line="128" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/session/defaults/DefaultSqlSession.java" description="到了这里" line="133" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/session/defaults/DefaultSqlSession.java" description="已经拿到了sql语句" line="139" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/session/defaults/DefaultSqlSession.java" description="======这是一个非常关键的地方（借口到底是怎么找到sql语句，交给执行器去执行的）======" line="138" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/session/defaults/DefaultSqlSession.java" description="进入query方法" line="147" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/executor/CachingExecutor.java" description="到了这里" line="82" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/executor/CachingExecutor.java" description="把sql语句拿出来了" line="84" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/executor/CachingExecutor.java" description="cachekey存入到hashmap中到底是怎么存的，在这里进行查看createCacheKey" line="87" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/executor/CachingExecutor.java" description="再进入createCacheKey" line="157" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/executor/BaseExecutor.java" description="到这里" line="219" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/executor/BaseExecutor.java" description="id" line="227" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/executor/BaseExecutor.java" description="翻页" line="229" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/executor/BaseExecutor.java" description="sql" line="232" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/executor/BaseExecutor.java" description="参数的信息" line="253" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/executor/CachingExecutor.java" description="回到这里来" line="88" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/executor/CachingExecutor.java" description="继续进入query" line="89" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/executor/CachingExecutor.java" description="接着进入" line="119" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/executor/BaseExecutor.java" description="到了这里" line="154" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/executor/BaseExecutor.java" description="薛薇关注下这里" line="164" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/executor/CachingExecutor.java" description="回来接着看这里，有点小关键" line="96" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/executor/CachingExecutor.java" description="看下这里的注释" line="107" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/executor/BaseExecutor.java" description="继续回来看一级缓存，先从本地缓存进行查询" line="172" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/executor/BaseExecutor.java" description="如果缓存中没有就从数据库查询" line="177" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/executor/BaseExecutor.java" description="进入queryFromDatabase" line="178" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/executor/BaseExecutor.java" description="没有缓存的话是如何查询的？" line="348" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/executor/SimpleExecutor.java" description="看一下默认的SimpleExecutor中的" line="66" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/executor/SimpleExecutor.java" description="进入newStatementHandler" line="73" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/session/Configuration.java" description="进入RoutingStatementHandler" line="496" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/executor/statement/RoutingStatementHandler.java" description="从这里进入" line="50" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/executor/statement/PreparedStatementHandler.java" description="进入父类构造函数" line="42" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/executor/statement/BaseStatementHandler.java" description="进入newParameterHandler" line="75" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/session/Configuration.java" description="诺，跟之前一样，也是能够被插件拦截" line="479" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/session/Configuration.java" description="诺，这里也一样" line="489" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/executor/SimpleExecutor.java" description="进入prepareStatement" line="77" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/executor/SimpleExecutor.java" description="进入" line="80" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/executor/statement/PreparedStatementHandler.java" description="进入preparedStatementHandler" line="64" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/executor/statement/PreparedStatementHandler.java" description="到这里终于找到了jdbc的操作，终于可以死心了" line="66" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/executor/statement/PreparedStatementHandler.java" description="进入handleResultSets方法对结果集进行处理" line="68" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/executor/resultset/DefaultResultSetHandler.java" description="到这里" line="154" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/executor/resultset/DefaultResultSetHandler.java" description="进入handleResultSet方法" line="181" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/executor/resultset/DefaultResultSetHandler.java" description="进入handleRowValues方法" line="259" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/executor/resultset/DefaultResultSetHandler.java" description="handleRowValuesForNestedResultMap方法等,更多细节通过debug查看" line="287" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/executor/BaseExecutor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="619">
+              <caret line="348" column="16" lean-forward="true" selection-start-line="348" selection-start-column="16" selection-end-line="348" selection-end-column="16" />
+              <folding>
+                <element signature="e#9159#9160#0" expanded="true" />
+                <element signature="e#12594#12595#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/executor/SimpleExecutor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="999">
+              <caret line="80" column="27" selection-start-line="80" selection-start-column="27" selection-end-line="80" selection-end-column="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/session/Configuration.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="482">
+              <caret line="496" column="53" lean-forward="true" selection-start-line="496" selection-start-column="44" selection-end-line="496" selection-end-column="67" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/executor/statement/RoutingStatementHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="540">
+              <caret line="45" column="21" lean-forward="true" selection-start-line="45" selection-start-column="21" selection-end-line="45" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/executor/statement/PreparedStatementHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="532">
+              <caret line="68" column="32" selection-start-line="68" selection-start-column="32" selection-end-line="68" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/executor/resultset/DefaultResultSetHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="358">
+              <caret line="281" column="4" lean-forward="true" selection-start-line="281" selection-start-column="4" selection-end-line="281" selection-end-column="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/leesin/MybatisTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1221">
+              <caret line="43" column="71" lean-forward="true" selection-start-line="43" selection-start-column="71" selection-end-line="43" selection-end-column="71" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/executor/resultset/ResultSetHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="435">
+              <caret line="32" column="14" selection-start-line="32" selection-start-column="14" selection-end-line="32" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/executor/statement/BaseStatementHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="129">
+              <caret line="56" column="12" selection-start-line="56" selection-start-column="12" selection-end-line="56" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/cache/impl/PerpetualCache.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="239">
+              <caret line="32" column="42" lean-forward="true" selection-start-line="32" selection-start-column="42" selection-end-line="32" selection-end-column="42" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/test/java/com/leesin/Blog.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/leesin/associate/AuthorAndBlog.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/leesin/associate/Comment.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/leesin/Comment.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/leesin/BlogAndAuthor.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/leesin/BlogMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/apache/ibatis/builder/xml/XMLConfigBuilder.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/apache/ibatis/builder/xml/XMLStatementBuilder.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/apache/ibatis/builder/MapperBuilderAssistant.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/apache/ibatis/builder/xml/XMLMapperBuilder.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/apache/ibatis/session/SqlSessionFactoryBuilder.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/apache/ibatis/session/defaults/DefaultSqlSessionFactory.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/apache/ibatis/session/Configuration.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/apache/ibatis/plugin/InterceptorChain.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/apache/ibatis/binding/MapperRegistry.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/apache/ibatis/binding/MapperProxyFactory.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/leesin/MybatisTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/apache/ibatis/binding/MapperProxy.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/apache/ibatis/binding/MapperMethod.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/apache/ibatis/session/defaults/DefaultSqlSession.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/apache/ibatis/executor/CachingExecutor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/apache/ibatis/executor/BaseExecutor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/apache/ibatis/executor/statement/RoutingStatementHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/apache/ibatis/executor/statement/BaseStatementHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/apache/ibatis/executor/SimpleExecutor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/apache/ibatis/executor/statement/PreparedStatementHandler.java" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand />
+      <select />
+    </treeState>
+  </component>
+  <component name="ProjectFrameBounds" x="1843" y="0" width="1588" height="1410" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1" />
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="mybatis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mybatis" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mybatis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mybatis" type="462c0819:PsiDirectoryNode" />
+              <item name=".idea" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mybatis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mybatis" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mybatis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mybatis" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mybatis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mybatis" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mybatis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mybatis" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ibatis" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mybatis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mybatis" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ibatis" type="462c0819:PsiDirectoryNode" />
+              <item name="annotations" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mybatis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mybatis" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ibatis" type="462c0819:PsiDirectoryNode" />
+              <item name="builder" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mybatis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mybatis" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ibatis" type="462c0819:PsiDirectoryNode" />
+              <item name="builder" type="462c0819:PsiDirectoryNode" />
+              <item name="xml" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mybatis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mybatis" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ibatis" type="462c0819:PsiDirectoryNode" />
+              <item name="session" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mybatis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mybatis" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mybatis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mybatis" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mybatis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mybatis" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="leesin" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="TerminalArrangementManager">
+    <option name="myTabStates">
+      <TerminalTabState tabName="Local" currentWorkingDirectory="F:\git_home\mybatis\" commandHistoryFileName="history-6" />
+    </option>
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="21550000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="1843" y="0" width="1588" height="1410" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" id="Favorites" sideWeight="0.9639017" side_tool="true" visible="true" weight="0.23363875" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.03609831" visible="true" weight="0.23363875" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.24983256" />
+      <window_info anchor="bottom" id="Services" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Endpoints" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Internal Method Tracing" />
+      <window_info anchor="bottom" id="Terminal" weight="0.4093702" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Build" />
+      <window_info anchor="bottom" id="Sequence" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Theme Preview" />
+      <window_info anchor="right" id="Ant" />
+      <window_info anchor="right" id="Maven" />
+      <window_info anchor="right" id="Word Book" side_tool="true" />
+      <window_info anchor="right" id="Database" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="Favorites" order="0" side_tool="true" visible="true" weight="0.24983256" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.24983256" />
+      <window_info id="Structure" order="2" side_tool="true" weight="0.24983256" />
+      <window_info anchor="bottom" id="Services" order="0" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Endpoints" order="1" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Internal Method Tracing" order="2" />
+      <window_info anchor="bottom" id="Terminal" order="3" weight="0.4093702" />
+      <window_info anchor="bottom" id="Database Changes" order="4" />
+      <window_info anchor="bottom" id="Version Control" order="5" />
+      <window_info anchor="bottom" id="Event Log" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Build" order="7" />
+      <window_info anchor="bottom" id="Sequence" order="8" />
+      <window_info anchor="bottom" id="Message" order="9" />
+      <window_info anchor="bottom" id="Find" order="10" />
+      <window_info anchor="bottom" id="Run" order="11" />
+      <window_info anchor="bottom" id="Debug" order="12" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="13" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="14" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="15" />
+      <window_info anchor="right" id="Theme Preview" order="0" />
+      <window_info anchor="right" id="Ant" order="1" />
+      <window_info anchor="right" id="Word Book" order="2" side_tool="true" />
+      <window_info anchor="right" id="Maven" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="5" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="6" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="7" weight="0.25" />
+    </layout-to-restore>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/annotations/CacheNamespace.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="30" column="18" selection-start-line="30" selection-start-column="18" selection-end-line="30" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1637">
+          <caret line="93" column="33" lean-forward="true" selection-start-line="93" selection-start-column="33" selection-end-line="93" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/annotations/Select.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="377">
+          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/org/apache/ibatis/BaseDataTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-881">
+          <caret line="29" column="22" selection-start-line="29" selection-start-column="22" selection-end-line="29" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/leesin/associate/BlogAndAuthor.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/leesin/associate/BlogAndComment.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/leesin/associate/AuthorAndBlog.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/leesin/associate/Author.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/leesin/associate/Blog.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/leesin/associate/BlogExample.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/leesin/associate/Comment.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/leesin/Author.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/leesin/Blog.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/leesin/BlogExample.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/leesin/Comment.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/leesin/BlogAndAuthor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="58">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1228">
+          <caret line="461" column="61" selection-start-line="461" selection-start-column="61" selection-end-line="461" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/builder/xml/XMLMapperEntityResolver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="424">
+          <caret line="39" column="13" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/parsing/XNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="329" column="20" selection-start-line="329" selection-start-column="20" selection-end-line="329" selection-end-column="20" />
+          <folding>
+            <element signature="e#4033#4034#0" expanded="true" />
+            <element signature="e#4088#4089#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/builder/MapperBuilderAssistant.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="387">
+          <caret line="264" column="45" selection-start-line="264" selection-start-column="45" selection-end-line="264" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/builder/xml/XMLStatementBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="29">
+          <caret line="74" column="14" selection-start-line="74" selection-start-column="14" selection-end-line="74" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/builder/xml/XMLMapperBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="424">
+          <caret line="96" column="14" selection-start-line="96" selection-start-column="14" selection-end-line="96" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/builder/xml/XMLConfigBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="122">
+          <caret line="100" column="23" selection-start-line="100" selection-start-column="23" selection-end-line="100" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/session/SqlSessionFactoryBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="844">
+          <caret line="104" column="7" lean-forward="true" selection-start-line="104" selection-start-column="7" selection-end-line="104" selection-end-column="7" />
+          <folding>
+            <element signature="e#2586#2587#0" expanded="true" />
+            <element signature="e#2633#2634#0" expanded="true" />
+            <element signature="e#3618#3619#0" expanded="true" />
+            <element signature="e#3671#3672#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/session/SqlSessionManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="37" column="13" selection-start-line="37" selection-start-column="13" selection-end-line="37" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/plugin/InterceptorChain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="609">
+          <caret line="37" column="28" lean-forward="true" selection-start-line="37" selection-start-column="28" selection-end-line="37" selection-end-column="28" />
+          <folding>
+            <element signature="e#932#945#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/session/SqlSessionFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="31" column="20" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/session/defaults/DefaultSqlSessionFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="706">
+          <caret line="106" column="25" lean-forward="true" selection-start-line="106" selection-start-column="25" selection-end-line="106" selection-end-column="25" />
+          <folding>
+            <element signature="e#1624#1625#0" expanded="true" />
+            <element signature="e#1668#1669#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/leesin/BlogMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="406">
+          <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/binding/MapperRegistry.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="648">
+          <caret line="57" column="38" lean-forward="true" selection-start-line="57" selection-start-column="38" selection-end-line="57" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_221/src.zip!/java/lang/reflect/Proxy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="395">
+          <caret line="702" column="25" selection-start-line="702" selection-start-column="25" selection-end-line="702" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/binding/MapperProxyFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="812">
+          <caret line="53" column="20" selection-start-line="53" selection-start-column="20" selection-end-line="53" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/binding/MapperProxy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="685">
+          <caret line="62" column="31" selection-start-line="62" selection-start-column="24" selection-end-line="62" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/binding/MapperMethod.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="957">
+          <caret line="81" column="32" selection-start-line="81" selection-start-column="32" selection-end-line="81" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/session/SqlSession.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="56" column="14" selection-start-line="56" selection-start-column="14" selection-end-line="56" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/session/defaults/DefaultSqlSession.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="822">
+          <caret line="147" column="24" selection-start-line="147" selection-start-column="24" selection-end-line="147" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/executor/CachingExecutor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1083">
+          <caret line="119" column="27" selection-start-line="119" selection-start-column="27" selection-end-line="119" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/executor/Executor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="44" column="16" selection-start-line="44" selection-start-column="16" selection-end-line="44" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/executor/ExecutionPlaceholder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="24" column="2" selection-start-line="24" selection-start-column="2" selection-end-line="24" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/cache/Cache.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="899">
+          <caret line="45" column="17" selection-start-line="45" selection-start-column="17" selection-end-line="45" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/cache/impl/PerpetualCache.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="239">
+          <caret line="32" column="42" lean-forward="true" selection-start-line="32" selection-start-column="42" selection-end-line="32" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/executor/statement/BaseStatementHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="129">
+          <caret line="56" column="12" selection-start-line="56" selection-start-column="12" selection-end-line="56" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/executor/statement/RoutingStatementHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="45" column="21" lean-forward="true" selection-start-line="45" selection-start-column="21" selection-end-line="45" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/session/Configuration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="482">
+          <caret line="496" column="53" lean-forward="true" selection-start-line="496" selection-start-column="44" selection-end-line="496" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/executor/BaseExecutor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="619">
+          <caret line="348" column="16" lean-forward="true" selection-start-line="348" selection-start-column="16" selection-end-line="348" selection-end-column="16" />
+          <folding>
+            <element signature="e#9159#9160#0" expanded="true" />
+            <element signature="e#12594#12595#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/executor/SimpleExecutor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="999">
+          <caret line="80" column="27" selection-start-line="80" selection-start-column="27" selection-end-line="80" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/executor/resultset/ResultSetHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="32" column="14" selection-start-line="32" selection-start-column="14" selection-end-line="32" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/executor/statement/PreparedStatementHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="68" column="32" selection-start-line="68" selection-start-column="32" selection-end-line="68" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/apache/ibatis/executor/resultset/DefaultResultSetHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="358">
+          <caret line="281" column="4" lean-forward="true" selection-start-line="281" selection-start-column="4" selection-end-line="281" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/leesin/MybatisTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1221">
+          <caret line="43" column="71" lean-forward="true" selection-start-line="43" selection-start-column="71" selection-end-line="43" selection-end-column="71" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

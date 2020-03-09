@@ -31,6 +31,7 @@ import org.apache.ibatis.session.SqlSession;
  * 映射器代理，代理模式
  *
  */
+// 确实实现了InvocationHandler的接口
 public class MapperProxy<T> implements InvocationHandler, Serializable {
 
   private static final long serialVersionUID = -6424540398559729838L;
@@ -56,6 +57,7 @@ public class MapperProxy<T> implements InvocationHandler, Serializable {
       }
     }
     //这里优化了，去缓存中找MapperMethod
+    // cachedMapperMethod，提升找到MapperMethod的效率
     final MapperMethod mapperMethod = cachedMapperMethod(method);
     //执行
     return mapperMethod.execute(sqlSession, args);

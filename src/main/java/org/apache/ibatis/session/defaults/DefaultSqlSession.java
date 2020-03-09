@@ -53,7 +53,7 @@ public class DefaultSqlSession implements SqlSession {
    */
   private boolean autoCommit;
   private boolean dirty;
-  
+
   public DefaultSqlSession(Configuration configuration, Executor executor, boolean autoCommit) {
     this.configuration = configuration;
     this.executor = executor;
@@ -77,6 +77,11 @@ public class DefaultSqlSession implements SqlSession {
     //转而去调用selectList,很简单的，如果得到0条则返回null，得到1条则返回1条，得到多条报TooManyResultsException错
     // 特别需要主要的是当没有查询到结果的时候就会返回null。因此一般建议在mapper中编写resultType的时候使用包装类型
     //而不是基本类型，比如推荐使用Integer而不是int。这样就可以避免NPE
+
+    //一个兼容、前瞻的写法，考虑对未来的兼容
+    //比如做一个代发代扣的系统,最开始的时候,在一期的时候,可能没有批量代发的需求,就需要做一个单笔代发的
+    //最开始没有上传文件等方式,只需要一条一条扣就可以了,但是知道未来一定会有代发代扣的需求,所以单笔的操作
+    //仅仅是批量操作的特殊的情况，只是 一个批次里面只有一条而已
     List<T> list = this.<T>selectList(statement, parameter);
     if (list.size() == 1) {
       return list.get(0);
@@ -126,11 +131,20 @@ public class DefaultSqlSession implements SqlSession {
 
   //核心selectList
   @Override
+  //这个statement到底是什么？就是借口的类名加方法名 com.xxx.BlogMapper.selectBlogById
   public <E> List<E> selectList(String statement, Object parameter, RowBounds rowBounds) {
     try {
-      //根据statement id找到对应的MappedStatement
+      // 根据statement id找到对应的MappedStatement
+      //======这是一个非常关键的地方（借口到底是怎么找到sql语句，交给执行器去执行的）======
+      //从Configuration中已经拿到了sql语句
       MappedStatement ms = configuration.getMappedStatement(statement);
       //转而用执行器来查询结果,注意这里传入的ResultHandler是null
+      //通过executor执行数据库的操作
+      //ms包含了sql的信息
+
+      //看看这个query方法，可是到底看哪个呢？
+      //如果开启了二级缓存，默认是true，就会进入CachingExecutor，否则就是BaseExecutor
+      //先进入就会进入CachingExecutor看看
       return executor.query(ms, wrapCollection(parameter), rowBounds, Executor.NO_RESULT_HANDLER);
     } catch (Exception e) {
       throw ExceptionFactory.wrapException("Error querying database.  Cause: " + e, e);
@@ -313,7 +327,7 @@ public class DefaultSqlSession implements SqlSession {
         //参数若是List型，做list标记
         map.put("list", object);
       }
-      return map;      
+      return map;
     } else if (object != null && object.getClass().isArray()) {
       //参数若是数组型，，做array标记
       StrictMap<Object> map = new StrictMap<Object>();

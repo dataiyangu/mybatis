@@ -102,10 +102,11 @@ public class XMLMapperBuilder extends BaseBuilder {
       //标记一下，已经加载过了
       configuration.addLoadedResource(resource);
       //绑定映射器到namespace
+      //把Mapper接口和Mapper映射器的文件绑定起来
       bindMapperForNamespace();
     }
 
-    //还有没解析完的东东这里接着解析？  
+    //还有没解析完的东东这里接着解析？
     parsePendingResultMaps();
     parsePendingChacheRefs();
     parsePendingStatements();
@@ -121,6 +122,7 @@ public class XMLMapperBuilder extends BaseBuilder {
 //	    select * from Blog where id = #{id}
 //	  </select>
 //	</mapper>
+//  这里就是对mapper的解析
   private void configurationElement(XNode context) {
     try {
       //1.配置namespace
@@ -140,6 +142,7 @@ public class XMLMapperBuilder extends BaseBuilder {
       //6.配置sql(定义可重用的 SQL 代码段)
       sqlElement(context.evalNodes("/mapper/sql"));
       //7.配置select|insert|update|delete TODO
+      //在mybatis中通过mapper接口解决了statement硬编码的问题
       buildStatementFromContext(context.evalNodes("select|insert|update|delete"));
     } catch (Exception e) {
       throw new BuilderException("Error parsing Mapper XML. Cause: " + e, e);
@@ -160,9 +163,11 @@ public class XMLMapperBuilder extends BaseBuilder {
     for (XNode context : list) {
       //构建所有语句,一个mapper下可以有很多select
       //语句比较复杂，核心都在这里面，所以调用XMLStatementBuilder
+      //XMLStatementBuilder专门用来解析增删改查的标签
       final XMLStatementBuilder statementParser = new XMLStatementBuilder(configuration, builderAssistant, context, requiredDatabaseId);
       try {
           //核心XMLStatementBuilder.parseStatementNode
+        //解析增删改查的标签
         statementParser.parseStatementNode();
       } catch (IncompleteElementException e) {
           //如果出现SQL语句不完整，把它记下来，塞到configuration去
@@ -216,7 +221,7 @@ public class XMLMapperBuilder extends BaseBuilder {
     }
   }
 
-  //2.配置cache-ref,在这样的 情况下你可以使用 cache-ref 元素来引用另外一个缓存。 
+  //2.配置cache-ref,在这样的 情况下你可以使用 cache-ref 元素来引用另外一个缓存。
 //<cache-ref namespace="com.someone.application.data.SomeMapper"/>
   private void cacheRefElement(XNode context) {
     if (context != null) {
@@ -419,7 +424,7 @@ public class XMLMapperBuilder extends BaseBuilder {
       }
     }
   }
-  
+
   private boolean databaseIdMatchesCurrent(String id, String databaseId, String requiredDatabaseId) {
     if (requiredDatabaseId != null) {
       if (!requiredDatabaseId.equals(databaseId)) {
@@ -468,14 +473,14 @@ public class XMLMapperBuilder extends BaseBuilder {
     //又去调builderAssistant.buildResultMapping
     return builderAssistant.buildResultMapping(resultType, property, column, javaTypeClass, jdbcTypeEnum, nestedSelect, nestedResultMap, notNullColumn, columnPrefix, typeHandlerClass, flags, resulSet, foreignColumn, lazy);
   }
-  
+
   //5.1.1.1 处理嵌套的result map
   private String processNestedResultMappings(XNode context, List<ResultMapping> resultMappings) throws Exception {
 	  //处理association|collection|case
     if ("association".equals(context.getName())
         || "collection".equals(context.getName())
         || "case".equals(context.getName())) {
-    	
+
 //    	<resultMap id="blogResult" type="Blog">
 //    	  <association property="author" column="author_id" javaType="Author" select="selectAuthor"/>
 //    	</resultMap>
@@ -494,6 +499,7 @@ public class XMLMapperBuilder extends BaseBuilder {
     if (namespace != null) {
       Class<?> boundType = null;
       try {
+        //接口的类型，接口的全路径
         boundType = Resources.classForName(namespace);
       } catch (ClassNotFoundException e) {
         //ignore, bound type is not required
@@ -504,6 +510,7 @@ public class XMLMapperBuilder extends BaseBuilder {
           // to prevent loading again this resource from the mapper interface
           // look at MapperAnnotationBuilder#loadXmlResource
           configuration.addLoadedResource("namespace:" + namespace);
+          //最终也是调用了configuration.addMapper
           configuration.addMapper(boundType);
         }
       }

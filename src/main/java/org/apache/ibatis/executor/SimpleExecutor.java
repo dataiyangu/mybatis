@@ -35,7 +35,7 @@ import org.apache.ibatis.transaction.Transaction;
  */
 /**
  * 简单执行器
- * 
+ *
  */
 public class SimpleExecutor extends BaseExecutor {
 
@@ -62,6 +62,7 @@ public class SimpleExecutor extends BaseExecutor {
   }
 
   //select
+  //已经看到了statement
   @Override
   public <E> List<E> doQuery(MappedStatement ms, Object parameter, RowBounds rowBounds, ResultHandler resultHandler, BoundSql boundSql) throws SQLException {
     Statement stmt = null;
@@ -69,10 +70,14 @@ public class SimpleExecutor extends BaseExecutor {
       Configuration configuration = ms.getConfiguration();
       //新建一个StatementHandler
       //这里看到ResultHandler传入了
+      //在这里创建了三个handler：StatementHandler、parameterhandler、resultsethandler
       StatementHandler handler = configuration.newStatementHandler(wrapper, ms, parameter, rowBounds, resultHandler, boundSql);
       //准备语句
+      //对sql语句进行预编译
+      //处理参数
       stmt = prepareStatement(handler, ms.getStatementLog());
       //StatementHandler.query
+      //执行查询
       return handler.<E>query(stmt, resultHandler);
     } finally {
       closeStatement(stmt);
@@ -91,6 +96,7 @@ public class SimpleExecutor extends BaseExecutor {
     //调用StatementHandler.prepare
     stmt = handler.prepare(connection);
     //调用StatementHandler.parameterize
+    //parameterize处理参数
     handler.parameterize(stmt);
     return stmt;
   }

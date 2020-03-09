@@ -88,7 +88,11 @@ public class SqlSessionFactoryBuilder {
   //第8种方法和第4种方法差不多，Reader换成了InputStream
   public SqlSessionFactory build(InputStream inputStream, String environment, Properties properties) {
     try {
+      //专门用来解析全局的配置文件的
+      //到XMLConfigBuilder的同包下面还有很多的builder，比如XMLMappkerBuilder解析mapper映射器、
+      // XMLStatementBuilder解析statement，即映射器中的<select> </select>等
       XMLConfigBuilder parser = new XMLConfigBuilder(inputStream, environment, properties);
+      //现在再进入build方法查看
       return build(parser.parse());
     } catch (Exception e) {
       throw ExceptionFactory.wrapException("Error building SqlSession.", e);
@@ -101,7 +105,7 @@ public class SqlSessionFactoryBuilder {
       }
     }
   }
-    
+
   //最后一个build方法使用了一个Configuration作为参数,并返回DefaultSqlSessionFactory
   public SqlSessionFactory build(Configuration config) {
     return new DefaultSqlSessionFactory(config);

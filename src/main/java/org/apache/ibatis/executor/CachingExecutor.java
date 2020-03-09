@@ -57,7 +57,7 @@ public class CachingExecutor implements Executor {
   public void close(boolean forceRollback) {
     try {
       //issues #499, #524 and #573
-      if (forceRollback) { 
+      if (forceRollback) {
         tcm.rollback();
       } else {
         tcm.commit();
@@ -81,9 +81,12 @@ public class CachingExecutor implements Executor {
 
   @Override
   public <E> List<E> query(MappedStatement ms, Object parameterObject, RowBounds rowBounds, ResultHandler resultHandler) throws SQLException {
+    //从ms中把sql语句拿出来了
     BoundSql boundSql = ms.getBoundSql(parameterObject);
 	//query时传入一个cachekey参数
+    //cachekey存入到hashmap中到底是怎么存的，在这里进行查看createCacheKey
     CacheKey key = createCacheKey(ms, parameterObject, rowBounds, boundSql);
+    //回到这里来,拿到了CacheKey
     return query(ms, parameterObject, rowBounds, resultHandler, key, boundSql);
   }
 
@@ -91,6 +94,9 @@ public class CachingExecutor implements Executor {
   @Override
   public <E> List<E> query(MappedStatement ms, Object parameterObject, RowBounds rowBounds, ResultHandler resultHandler, CacheKey key, BoundSql boundSql)
       throws SQLException {
+    //这个cache对象是什么时候创建的?
+    //如果没有这个cache对象,都不会走二级缓存的流程,直接走 delegate.<E> query默认的
+    //额呵,是在配置文件中创建了</cache>标签，才会有这个对象
     Cache cache = ms.getCache();
     //默认情况下是没有开启缓存的(二级缓存).要开启二级缓存,你需要在你的 SQL 映射文件中添加一行: <cache/>
     //简单的说，就是先查CacheKey，查不到再委托给实际的执行器去查
@@ -99,8 +105,12 @@ public class CachingExecutor implements Executor {
       if (ms.isUseCache() && resultHandler == null) {
         ensureNoOutParams(ms, parameterObject, boundSql);
         @SuppressWarnings("unchecked")
+        //        为什么从tcm（TransactionalCacheManager）中拿？
+        //        tcm是二级缓存，支持，同时获取多个缓存和同时移除多个缓存，然后批量的提交
+        //        为什么一定要收懂conmmit？
         List<E> list = (List<E>) tcm.getObject(cache, key);
         if (list == null) {
+          //        通过tcm来管理二级缓存的，如果从二级缓存里面还没有拿到的话，就从数据库里面查询
           list = delegate.<E> query(ms, parameterObject, rowBounds, resultHandler, key, boundSql);
           tcm.putObject(cache, key, list); // issue #578 and #116
         }
@@ -144,6 +154,7 @@ public class CachingExecutor implements Executor {
 
   @Override
   public CacheKey createCacheKey(MappedStatement ms, Object parameterObject, RowBounds rowBounds, BoundSql boundSql) {
+    //delegate表示被CachingExecutor装饰的类，这个类当时是baseExecutor
     return delegate.createCacheKey(ms, parameterObject, rowBounds, boundSql);
   }
 
@@ -164,7 +175,7 @@ public class CachingExecutor implements Executor {
 
   private void flushCacheIfRequired(MappedStatement ms) {
     Cache cache = ms.getCache();
-    if (cache != null && ms.isFlushCacheRequired()) {      
+    if (cache != null && ms.isFlushCacheRequired()) {
       tcm.clear(cache);
     }
   }

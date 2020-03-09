@@ -48,6 +48,9 @@ public class MapperProxyFactory<T> {
   @SuppressWarnings("unchecked")
   protected T newInstance(MapperProxy<T> mapperProxy) {
     //用JDK自带的动态代理生成映射器
+    //类加载器、被代理类、代理类
+    //代理类一定实现了invocation接口，看下这个mapperProxy是否实现
+    //返回的是一个代理的对象，那么我们Mapper的实现类哪里去了？
     return (T) Proxy.newProxyInstance(mapperInterface.getClassLoader(), new Class[] { mapperInterface }, mapperProxy);
   }
 
