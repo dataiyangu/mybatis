@@ -107,7 +107,7 @@ public class CachingExecutor implements Executor {
         @SuppressWarnings("unchecked")
         //        为什么从tcm（TransactionalCacheManager）中拿？
         //        tcm是二级缓存，支持，同时获取多个缓存和同时移除多个缓存，然后批量的提交
-        //        为什么一定要收懂conmmit？
+        //        为什么一定要conmmit？
         List<E> list = (List<E>) tcm.getObject(cache, key);
         if (list == null) {
           //        通过tcm来管理二级缓存的，如果从二级缓存里面还没有拿到的话，就从数据库里面查询

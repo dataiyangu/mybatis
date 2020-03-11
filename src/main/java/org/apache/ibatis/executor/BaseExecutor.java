@@ -364,6 +364,7 @@ public abstract class BaseExecutor implements Executor {
     Connection connection = transaction.getConnection();
     if (statementLog.isDebugEnabled()) {
       //如果需要打印Connection的日志，返回一个ConnectionLogger(代理模式, AOP思想)
+      //进入ConnectionLogger看下
       return ConnectionLogger.newInstance(connection, statementLog, queryStack);
     } else {
       return connection;

@@ -42,6 +42,8 @@ public final class ConnectionLogger extends BaseJdbcLogger implements Invocation
   }
 
   @Override
+  //在他的同级包中，还有其他的一些Logger类，能够对他们进行代理。
+  //下面的invoke中有很多的debug，哈哈。
   public Object invoke(Object proxy, Method method, Object[] params)
       throws Throwable {
     try {

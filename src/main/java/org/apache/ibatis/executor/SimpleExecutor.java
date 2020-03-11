@@ -92,6 +92,7 @@ public class SimpleExecutor extends BaseExecutor {
 
   private Statement prepareStatement(StatementHandler handler, Log statementLog) throws SQLException {
     Statement stmt;
+    //Log如何实现的？
     Connection connection = getConnection(statementLog);
     //调用StatementHandler.prepare
     stmt = handler.prepare(connection);

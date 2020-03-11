@@ -50,6 +50,8 @@ public class MybatisTest {
             BlogMapper mapper = session.getMapper(BlogMapper.class);
             //sql执行
             //不论调用哪个方法都会走到invoke方法，因为是代理对象
+            //这里直接点肯定是点不了的
+            //直接进入MapperProxy的invoke方法
             Blog blog = mapper.selectBlogById(1);
             System.out.println(blog);
         } finally {

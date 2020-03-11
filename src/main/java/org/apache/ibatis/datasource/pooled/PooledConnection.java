@@ -29,12 +29,18 @@ import org.apache.ibatis.reflection.ExceptionUtil;
 /**
  * 池化的连接
  */
+//连接池，配置中resource的属性
+//  获取的时候，可以从池子中拿到，但是关闭的时候，不是调用close方法直接关闭的，
+//  要归还到连接池里面，必须有一个对象，把真实的物理连接，归还到连接池里面
+//  把真实的物理连接，归还到连接池里面的对象就是PooledConnection
+//  这也是一个动态代理
 class PooledConnection implements InvocationHandler {
 
   private static final String CLOSE = "close";
   private static final Class<?>[] IFACES = new Class<?>[] { Connection.class };
 
   private int hashCode = 0;
+  //在这里进行管理的
   private PooledDataSource dataSource;
   //真正的连接
   private Connection realConnection;
