@@ -35,6 +35,8 @@ public class InterceptorChain {
     //循环调用每个Interceptor.plugin方法
     for (Interceptor interceptor : interceptors) {
       //对executor进行的插件处理，简单理解为进行了包装
+      //创建代理对象，返回代理对象
+      //也就是说，从这里开始四大天王，或者自己写的插件已经是代理对象了。
       target = interceptor.plugin(target);
     }
     return target;

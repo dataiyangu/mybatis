@@ -44,6 +44,7 @@ public class Plugin implements InvocationHandler {
     this.signatureMap = signatureMap;
   }
 
+  //获得代理对象
   public static Object wrap(Object target, Interceptor interceptor) {
     //取得签名Map
     Map<Class<?>, Set<Method>> signatureMap = getSignatureMap(interceptor);
@@ -62,6 +63,7 @@ public class Plugin implements InvocationHandler {
   }
 
   @Override
+  //只要在前面创建Executor中被代理了的对象，都会执行这里的invoke方法
   public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
     try {
       //看看如何拦截
@@ -69,6 +71,8 @@ public class Plugin implements InvocationHandler {
       //看哪些方法需要拦截
       if (methods != null && methods.contains(method)) {
         //调用Interceptor.intercept，也即插入了我们自己的逻辑
+        //调用我们自己定义的拦截器的Intercept方法
+        //然后就是自己写的逻辑了。
         return interceptor.intercept(new Invocation(target, method, args));
       }
       //最后还是执行原来逻辑

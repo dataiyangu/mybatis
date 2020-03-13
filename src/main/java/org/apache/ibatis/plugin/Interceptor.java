@@ -27,9 +27,11 @@ import java.util.Properties;
 public interface Interceptor {
 
   //拦截
+  //Invocation对象
   Object intercept(Invocation invocation) throws Throwable;
 
   //插入
+  //这里的plugin方法一般就是  return Plugin.wrap(target,this)
   Object plugin(Object target);
 
   //设置属性

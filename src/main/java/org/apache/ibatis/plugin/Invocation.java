@@ -25,13 +25,14 @@ import java.lang.reflect.Method;
  * 调用
  *
  */
+//被代理对象的一个包装
 public class Invocation {
 
-  //调用的对象
+  //调用的对象  被拦截的对象
   private Object target;
-  //调用的方法
+  //调用的方法  被拦截的方法
   private Method method;
-  //参数
+  //参数  被拦截的方法的参数
   private Object[] args;
 
   public Invocation(Object target, Method method, Object[] args) {
@@ -53,6 +54,8 @@ public class Invocation {
   }
 
   //继续做下去
+  //调用原来的对象的方法
+  //对方法做增强，一般不会跳过原来的流程
   public Object proceed() throws InvocationTargetException, IllegalAccessException {
     return method.invoke(target, args);
   }

@@ -531,6 +531,7 @@ public class Configuration {
     }
     //此处调用插件,通过插件可以改变Executor行为
     //刚才已经知道interceptorChain存放的是插件
+    //interceptorChain存放所有的拦截器
     executor = (Executor) interceptorChain.pluginAll(executor);
     return executor;
   }

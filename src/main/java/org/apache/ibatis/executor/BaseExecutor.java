@@ -51,6 +51,10 @@ import org.apache.ibatis.type.TypeHandlerRegistry;
  */
 public abstract class BaseExecutor implements Executor {
 
+  /*
+  * 随便找个地方
+  *
+  * */
   private static final Log log = LogFactory.getLog(BaseExecutor.class);
 
   protected Transaction transaction;
