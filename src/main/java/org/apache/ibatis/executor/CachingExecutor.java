@@ -101,6 +101,7 @@ public class CachingExecutor implements Executor {
     //默认情况下是没有开启缓存的(二级缓存).要开启二级缓存,你需要在你的 SQL 映射文件中添加一行: <cache/>
     //简单的说，就是先查CacheKey，查不到再委托给实际的执行器去查
     if (cache != null) {
+      //是否配置了flushcache = true，清空缓存否
       flushCacheIfRequired(ms);
       if (ms.isUseCache() && resultHandler == null) {
         ensureNoOutParams(ms, parameterObject, boundSql);

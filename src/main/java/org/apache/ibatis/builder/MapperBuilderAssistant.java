@@ -266,7 +266,9 @@ public class MapperBuilderAssistant extends BaseBuilder {
   //增加映射语句
   public MappedStatement addMappedStatement(
       String id,
+      //sql语句
       SqlSource sqlSource,
+      //增删改查的类型
       StatementType statementType,
       SqlCommandType sqlCommandType,
       Integer fetchSize,

@@ -507,17 +507,17 @@ public class Configuration {
   //产生执行器
   public Executor newExecutor(Transaction transaction, ExecutorType executorType) {
     executorType = executorType == null ? defaultExecutorType : executorType;
-    //这句再做一下保护,囧,防止粗心大意的人将defaultExecutorType设成null?，就是setting中的defaultExecutorType
+    //这句再做一下保护,囧,防止粗心大意的人将defaultExecutorType设成null?，就是setting中的defaultExecutorType(mybatis-config.xml配置文件中)
     //SIMPLE就是默认的
     executorType = executorType == null ? ExecutorType.SIMPLE : executorType;
     Executor executor;
     //然后就是简单的3个分支，产生3种执行器BatchExecutor/ReuseExecutor/SimpleExecutor
     //如何看他们三个的类型？看他们的update方法
     if (ExecutorType.BATCH == executorType) {
-      //prepareStatement的addBatch的封装
+      //prepareStatement的addBatch的封装   支持重用、Batch（语句批量执行）
       executor = new BatchExecutor(this, transaction);
     } else if (ExecutorType.REUSE == executorType) {
-      //每次用完statement会缓存到map中
+      //每次用完statement会缓存到map中  支持重用
       executor = new ReuseExecutor(this, transaction);
     } else {
       //每次用完statement会关掉
@@ -526,7 +526,7 @@ public class Configuration {
     //这里是settings标签中的二级缓存的配置cacheEnabled
     //如果要求缓存，生成另一种CachingExecutor(默认就是有缓存),装饰者模式,所以默认都是返回CachingExecutor
     if (cacheEnabled) {
-      //就会通过装饰器模式，对这三个executor进行装饰
+      //就会通过装饰器模式，对这三个executor进行装饰 ，这里就是二级缓存
       executor = new CachingExecutor(executor);
     }
     //此处调用插件,通过插件可以改变Executor行为

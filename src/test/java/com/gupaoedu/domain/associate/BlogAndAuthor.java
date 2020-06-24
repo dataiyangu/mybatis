@@ -1,4 +1,6 @@
-package com.leesin;
+package com.gupaoedu.domain.associate;
+
+import com.gupaoedu.domain.Author;
 
 import java.io.Serializable;
 

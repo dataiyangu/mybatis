@@ -144,7 +144,7 @@ public class XMLStatementBuilder extends BaseBuilder {
           configuration.isUseGeneratedKeys() && SqlCommandType.INSERT.equals(sqlCommandType))
           ? new Jdbc3KeyGenerator() : new NoKeyGenerator();
     }
-    //把所有的增删改查解析完之后
+    //把所有的增删改查标签所有属性解析完之后
 	//又去调助手类
     builderAssistant.addMappedStatement(id, sqlSource, statementType, sqlCommandType,
         fetchSize, timeout, parameterMap, parameterTypeClass, resultMap, resultTypeClass,

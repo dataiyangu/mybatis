@@ -227,10 +227,10 @@ public abstract class BaseExecutor implements Executor {
     }
     //无论一级缓存二级缓存cacheKey都是一样的
     CacheKey cacheKey = new CacheKey();
-    //MyBatis 对于其 Key 的生成采取规则为：[mappedStementId + offset + limit + SQL + queryParams + environment]生成一个哈希码
+    //MyBatis 对于其 Key 的生成采取规则为：[mappedStementId + offset + limit + SQL语句 + queryParams + environment]生成一个哈希码
     //ms.getId()就是类名加上statement id
     cacheKey.update(ms.getId());
-    //翻页的信息
+    //翻页的信息      查第一页和第二页 ，虽然是同一个方法，但是 查的数据不一样
     cacheKey.update(Integer.valueOf(rowBounds.getOffset()));
     cacheKey.update(Integer.valueOf(rowBounds.getLimit()));
     //sql语句
@@ -254,7 +254,7 @@ public abstract class BaseExecutor implements Executor {
           MetaObject metaObject = configuration.newMetaObject(parameterObject);
           value = metaObject.getValue(propertyName);
         }
-        //参数的信息
+        //参数的信息 whre id =1
         cacheKey.update(value);
       }
     }
@@ -346,7 +346,7 @@ public abstract class BaseExecutor implements Executor {
   private <E> List<E> queryFromDatabase(MappedStatement ms, Object parameter, RowBounds rowBounds, ResultHandler resultHandler, CacheKey key, BoundSql boundSql) throws SQLException {
     //既然要到数据库去查询，查询完了之后一定会保存起来到list中
     List<E> list;
-    //先向缓存中放入占位符？？？EXECUTION_PLACEHOLDER
+    //先向缓存中放入占位符？？？EXECUTION_PLACEHOLDER  一个字符串，把自己位置先占据了
     localCache.putObject(key, EXECUTION_PLACEHOLDER);
     try {
       //查询（没有缓存）

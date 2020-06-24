@@ -1,4 +1,4 @@
-package com.leesin;
+package com.gupaoedu.domain;
 
 import jdk.nashorn.internal.ir.annotations.Ignore;
 import org.apache.ibatis.io.Resources;

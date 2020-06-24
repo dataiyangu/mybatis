@@ -131,12 +131,14 @@ public class DefaultSqlSession implements SqlSession {
 
   //核心selectList
   @Override
-  //这个statement到底是什么？就是借口的类名加方法名 com.xxx.BlogMapper.selectBlogById
+  //这个statement到底是什么？就是接口的全类名加方法名 com.xxx.BlogMapper.selectBlogById
   public <E> List<E> selectList(String statement, Object parameter, RowBounds rowBounds) {
     try {
       // 根据statement id找到对应的MappedStatement
-      //======这是一个非常关键的地方（借口到底是怎么找到sql语句，交给执行器去执行的）======
+      //======这是一个非常关键的地方（接口到底是怎么通过方法找到sql语句，后面交给执行器去执行的）======
       //从Configuration中已经拿到了sql语句
+      //MappedStatement 是mapper映射器里面 增删改查标签的所有内容的存储
+      //从configuration中拿到statement对应的MappedStatement，已经拿到了sql语句
       MappedStatement ms = configuration.getMappedStatement(statement);
       //转而用执行器来查询结果,注意这里传入的ResultHandler是null
       //通过executor执行数据库的操作

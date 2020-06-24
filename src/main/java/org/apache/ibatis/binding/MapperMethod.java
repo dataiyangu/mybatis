@@ -70,13 +70,13 @@ public class MapperMethod {
         executeWithResultHandler(sqlSession, args);
         result = null;
       } else if (method.returnsMany()) {
-        //如果结果有多条记录
+        //如果结果有多条记录  返回多条记录？
         result = executeForMany(sqlSession, args);
       } else if (method.returnsMap()) {
-        //如果结果是map
+        //如果结果是map   返回Map
         result = executeForMap(sqlSession, args);
       } else {
-        //否则就是一条记录
+        //否则就是一条记录     所以走到了这里    增删改查都有这个方法   代码中方法的参数，转化成sql语句里面的参数
         Object param = method.convertArgsToSqlCommandParam(args);
         // 还是最终调用的了sqlSession的selectOne方法
         result = sqlSession.selectOne(command.getName(), param);

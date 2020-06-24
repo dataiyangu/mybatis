@@ -1,4 +1,4 @@
-package com.leesin;
+package com.gupaoedu.domain;
 
 /**
  * @Author: qingshan

@@ -100,6 +100,7 @@ public class XMLConfigBuilder extends BaseBuilder {
   //解析配置
   public Configuration parse() {
     //如果已经解析过了，报错
+    //启动mybaties之后，只会解析一次
     if (parsed) {
       throw new BuilderException("Each XMLConfigBuilder can only be used once.");
     }
@@ -125,11 +126,13 @@ public class XMLConfigBuilder extends BaseBuilder {
 //  </configuration>
 
     //根节点是configuration
+    //解析全局配置文件
     parseConfiguration(parser.evalNode("/configuration"));
     return configuration;
   }
 
   //解析配置
+  //解析所有的一级标签的
   private void parseConfiguration(XNode root) {
     try {
       //分步骤解析
@@ -227,6 +230,7 @@ public class XMLConfigBuilder extends BaseBuilder {
       for (XNode child : parent.getChildren()) {
         String interceptor = child.getStringAttribute("interceptor");
         Properties properties = child.getChildrenAsProperties();
+        //把所有的interceptor强转成InterCeptor
         Interceptor interceptorInstance = (Interceptor) resolveClass(interceptor).newInstance();
         interceptorInstance.setProperties(properties);
         //调用InterceptorChain.addInterceptor
@@ -397,10 +401,13 @@ public class XMLConfigBuilder extends BaseBuilder {
 		//循环比较id是否就是指定的environment
         if (isSpecifiedEnvironment(id)) {
           //7.1事务管理器
+          //事务工厂
           TransactionFactory txFactory = transactionManagerElement(child.evalNode("transactionManager"));
-          //7.2数据源
+          //7.2数据源工厂
           DataSourceFactory dsFactory = dataSourceElement(child.evalNode("dataSource"));
+          //拿到一个数据源
           DataSource dataSource = dsFactory.getDataSource();
+          //放到Enviroment
           Environment.Builder environmentBuilder = new Environment.Builder(id)
               .transactionFactory(txFactory)
               .dataSource(dataSource);

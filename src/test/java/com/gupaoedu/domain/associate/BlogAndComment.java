@@ -1,4 +1,4 @@
-package com.leesin.associate;
+package com.gupaoedu.domain.associate;
 
 import com.gupaoedu.domain.Comment;
 

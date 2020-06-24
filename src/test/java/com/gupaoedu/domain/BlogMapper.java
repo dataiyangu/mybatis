@@ -1,8 +1,8 @@
-package com.leesin;
+package com.gupaoedu.domain;
 
 
-import com.leesin.associate.AuthorAndBlog;
-import com.leesin.associate.BlogAndComment;
+import com.gupaoedu.domain.associate.AuthorAndBlog;
+import com.gupaoedu.domain.associate.BlogAndComment;
 import org.apache.ibatis.session.RowBounds;
 
 import java.util.List;

@@ -1,18 +1,16 @@
-package com.leesin.associate;
-
-import com.gupaoedu.domain.Author;
+package com.gupaoedu.domain;
 
 import java.io.Serializable;
 
 /**
  * @Author: qingshan
- * @Date: 2019/4/13 19:37
+ * @Date: 2019/1/16 13:52
  * @Description: 咕泡学院，只为更好的你
  */
-public class BlogAndAuthor implements Serializable {
+public class Blog implements Serializable{
     Integer bid; // 文章ID
     String name; // 文章标题
-    Author author; // 作者
+    Integer authorId; // 文章作者ID
 
     public Integer getBid() {
         return bid;
@@ -30,20 +28,20 @@ public class BlogAndAuthor implements Serializable {
         this.name = name;
     }
 
-    public Author getAuthor() {
-        return author;
+    public Integer getAuthorId() {
+        return authorId;
     }
 
-    public void setAuthor(Author author) {
-        this.author = author;
+    public void setAuthorId(Integer authorId) {
+        this.authorId = authorId;
     }
 
     @Override
     public String toString() {
-        return "BlogAndAuthor{" +
+        return "Blog{" +
                 "bid=" + bid +
                 ", name='" + name + '\'' +
-                ", author=" + author +
+                ", authorId='" + authorId + '\'' +
                 '}';
     }
 }
